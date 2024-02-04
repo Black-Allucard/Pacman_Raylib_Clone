@@ -1,31 +1,62 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (root.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  ray.c
+  pacman.c
 C:\Users\Guule\Desktop\root\root\tile_grid.h(14,2): warning C4091: 'typedef ': ignored on left of 'tile_type' when no variable is declared
 C:\Users\Guule\Desktop\root\root\pacman.h(51,62): warning C4028: formal parameter 2 different from declaration
 C:\Users\Guule\Desktop\root\root\pacman.h(51,62): warning C4028: formal parameter 3 different from declaration
-C:\Users\Guule\Desktop\root\root\ray.c(129,33): warning C4090: 'function': different 'const' qualifiers
-C:\Users\Guule\Desktop\root\root\ray.c(276,22): warning C4090: 'function': different 'const' qualifiers
-C:\Users\Guule\Desktop\root\root\ray.c(278,26): warning C4020: 'reset_pacman': too many actual parameters
-C:\Users\Guule\Desktop\root\root\ray.c(304,21): warning C4090: 'function': different 'const' qualifiers
-C:\Users\Guule\Desktop\root\root\ray.c(630,34): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(631,36): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(632,35): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(633,35): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(640,51): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(640,75): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(667,22): warning C4047: '=': 'trigger *' differs in levels of indirection from 'int'
-C:\Users\Guule\Desktop\root\root\ray.c(670,27): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(688,35): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(688,85): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(816,51): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(816,75): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(828,61): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(833,61): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(641,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(642,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(167,10): warning C4101: 'enter_fright': unreferenced local variable
-C:\Users\Guule\Desktop\root\root\ray.c(154,8): warning C4101: 'siren2': unreferenced local variable
-C:\Users\Guule\Desktop\root\root\ray.c(174,10): warning C4101: 'round': unreferenced local variable
+C:\Users\Guule\Desktop\root\root\pacman.c(12,50): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(12,72): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(59,42): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Guule\Desktop\root\root\pacman.c(62,42): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Guule\Desktop\root\root\pacman.c(68,42): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Guule\Desktop\root\root\pacman.c(78,42): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Guule\Desktop\root\root\pacman.c(81,42): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Guule\Desktop\root\root\pacman.c(87,42): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Guule\Desktop\root\root\pacman.c(92,34): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Guule\Desktop\root\root\pacman.c(95,34): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Guule\Desktop\root\root\pacman.c(101,34): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Guule\Desktop\root\root\pacman.c(163,41): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(164,41): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(169,41): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(170,41): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(189,37): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(190,37): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(13,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(14,16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(10,10): warning C4101: 'next_tile': unreferenced local variable
+C:\Users\Guule\Desktop\root\root\pacman.c(214,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(261,23): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Guule\Desktop\root\root\pacman.c(264,23): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Guule\Desktop\root\root\pacman.c(270,23): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Guule\Desktop\root\root\pacman.c(316,21): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(325,21): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(308,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(309,23): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(346,45): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(351,45): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(359,49): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(363,49): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(373,39): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(377,53): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(377,67): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(415,53): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(415,66): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(427,75): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(427,78): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(428,28): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\Guule\Desktop\root\root\pacman.c(425,21): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(434,68): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(434,75): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(432,9): warning C4101: 'level_index': unreferenced local variable
+C:\Users\Guule\Desktop\root\root\pacman.c(433,9): warning C4101: 'x': unreferenced local variable
+C:\Users\Guule\Desktop\root\root\pacman.c(443,88): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(448,100): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(453,89): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(464,17): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(465,85): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(465,93): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\pacman.c(466,22): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\Guule\Desktop\root\root\pacman.c(289): warning C4715: 'dir_to_angle': not all control paths return a value
+C:\Users\Guule\Desktop\root\root\pacman.c(336): warning C4715: 'is_tile_blocking': not all control paths return a value
   root.vcxproj -> C:\Users\Guule\Desktop\root\x64\Debug\Pacman.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

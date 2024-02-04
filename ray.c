@@ -17,6 +17,8 @@ Color I = { 27,169,197,255 };
 Color B = { 172,35,35,255 };
 Color P = { 255,121,230,255 };
 Color C = { 255,165,0,255 };
+Color peach = { 255,139,126,255 };
+Color light_pink = { 251,128,228,255 };
 
 const int a[36][28] = { {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 						{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -108,10 +110,12 @@ int main() {
 
 	bool beat_highscore = false;
 	bool in_prelude = true;
+	bool in_prelude2 = true;
 	bool enable_global_counter = false;
 	bool eat_fruit = true;
 	bool in_round = false;
 	bool flash = false;
+	bool one_up = false;
 
 	Texture2D graphics = LoadTexture("./assets/Sprites.png");
 
@@ -159,9 +163,10 @@ int main() {
 	Sound start_up = LoadSound("./assets/pacman_start.wav");
 	Sound pac_die = LoadSound("./assets/Pac_die.wav");
 	Sound s;
-
+	Sound transition = LoadSound("./assets/prelude_transition.wav");
 
 	Font font = LoadFont("./assets/font.ttf");
+	Font logo_font = LoadFont("./assets/namco_.ttf");
 
 
 	trigger enter_fright;
@@ -194,8 +199,10 @@ int main() {
 
 			if (IsKeyPressed(KEY_SPACE)) {
 				in_prelude = false;
-
-				game_started.trigger = tick;
+				in_prelude2 = true;
+				flash = false;
+				PlaySound(transition);
+				
 			}
 
 			BeginDrawing();
@@ -256,9 +263,50 @@ int main() {
 				DrawTextEx(font, "\"clyde\"", (Vector2) { 450, 445 }, 30, 0, C);
 
 			}
+			if (loop_tick >= 940) {
+				DrawTextEx(font, "10", (Vector2) { 300, 600 }, 25, 0, RAYWHITE);
+				DrawTextEx(font, "PTS", (Vector2) { 350, 605 }, 20, 0, RAYWHITE);
+				DrawTextEx(font, "50", (Vector2) { 300, 650 }, 25, 0, RAYWHITE);
+				DrawTextEx(font, "PTS", (Vector2) { 350, 655 }, 20, 0, RAYWHITE);
+				DrawTextEx(logo_font, "namco", (Vector2) { 290, 750 }, 40, 3, PINK);
+
+			}
+			if (loop_tick >= 980) {
+				if (loop_tick % 15 == 0 && flash == true) {
+					flash = false;
+				}
+				else if (loop_tick % 15 == 0 && flash == false) {
+					flash = true;
+				}
+				DrawTexturePro(graphics, sources_grid[2], (Rectangle) { 270,615 , 24, 24 }, (Vector2) { 12, 12 }, 0, RAYWHITE);
+				if (flash) {
+					DrawTexturePro(graphics, sources_grid[5], (Rectangle) { 270, 665, 24, 24 }, (Vector2) { 12, 12 }, 0, RAYWHITE);
+				}
+			}
+			if (loop_tick >= 1280) {
+			//	loop_tick = 0;
+			}
 			
 			EndDrawing();
 			loop_tick += 1;
+		}
+		else if (in_prelude2) {
+			if (IsKeyPressed(KEY_SPACE)) {
+				in_prelude2 = false;
+				flash = false;
+				game_started.trigger = tick;
+			}
+			BeginDrawing();
+			ClearBackground(BLACK);
+			DrawTextEx(font, "HIGH SCORE", (Vector2) { 240, 0 }, 36, 0, YELLOW);
+			DrawTextEx(font, TextFormat("%02i", (*pac).score), (Vector2) { 100, 30 }, 36, 1, RAYWHITE);
+			DrawTextEx(font, TextFormat("%02i", high_score), (Vector2) { 400, 30 }, 36, 1, RAYWHITE);
+			DrawTextEx(font, "1 player only", (Vector2) { 200, 500 }, 30, 0, ligth_blue);
+			DrawTextEx(font, "push space bar to start", (Vector2) { 100, 410 }, 30, 0, ORANGE);
+			DrawTextEx(font, "bonus pac-man for 10000 PTS", (Vector2) { 50, 560 }, 30, 0, peach);
+			draw_level(level, graphics, fruits);
+			DrawTextEx(font, "credit 1", (Vector2) { 50, 888 }, 33, 1, RAYWHITE);
+			EndDrawing();
 		}
 
 		else if (since(round_ended, tick) >= 240 && round_ended.trigger > -1) {
@@ -728,8 +776,18 @@ int main() {
 				}
 			}
 
-			if ((*pac).score >= high_score) {
+			if ((*pac).score >= high_score && high_score > 0) {
 				high_score = (*pac).score;
+				if (!IsSoundPlaying(ding_ding) && !beat_highscore) {
+					beat_highscore = true;
+					PlaySound(ding_ding);
+				}
+			}
+			
+			if ((*pac).score >= 10000 && !one_up) {
+				lives += 1;
+				one_up = true;
+				
 				if (!IsSoundPlaying(ding_ding) && !beat_highscore) {
 					beat_highscore = true;
 					PlaySound(ding_ding);

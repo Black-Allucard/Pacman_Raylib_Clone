@@ -380,7 +380,7 @@ fruits init_fruits() {
     f.frame = 0;
     f.fruit_index = 0;
     f.x = 364;
-    f.y = 689;
+    f.y = 533;
     f.disable = true;
     f.ghost_frame = 0;
     for (int i = 0; i < 20; i++) {

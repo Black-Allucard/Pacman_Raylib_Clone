@@ -133,6 +133,7 @@ void move(ghost* g, grid* gr, pacman* p, ghost* blink, float time, states s,int 
 	int largest_d = 10000;
 	double x;
 	double y;
+	
 	if (!(*g).in_house) {
 		if ((*g).entity.centre.x < -13) {
 			(*g).entity.centre.x = 740;
@@ -153,8 +154,8 @@ void move(ghost* g, grid* gr, pacman* p, ghost* blink, float time, states s,int 
 			}
 		}
 
-		else if (((abs((*g).entity.current_tile.Centre.x - (*g).entity.centre.x)) <= 1.13) && ((abs((*g).entity.current_tile.Centre.y - (*g).entity.centre.y)) <= 1.13)
-			|| ((*g).entity.centre.x > 299 && (*g).entity.centre.x < 455 && abs((*g).entity.centre.y - 377) <= 1.76 && (*g).entity.dir == UP)) {
+		else if (((abs((*g).entity.current_tile.Centre.x - (*g).entity.centre.x)) <= 1) && ((abs((*g).entity.current_tile.Centre.y - (*g).entity.centre.y)) <= 1)
+			|| ((*g).entity.centre.x > 299 && (*g).entity.centre.x < 455 && abs((*g).entity.centre.y - 377) <= 1.742 && (*g).entity.dir == UP)) {
 
 
 
@@ -293,7 +294,7 @@ void move(ghost* g, grid* gr, pacman* p, ghost* blink, float time, states s,int 
 				if (level == 1) {
 					(*g).speed = 0.85;
 				}
-				else if (level < 2 && level <= 5) {
+				else if (level > 1 && level <= 5) {
 					(*g).speed = 0.95;
 				}
 				else {
@@ -304,7 +305,7 @@ void move(ghost* g, grid* gr, pacman* p, ghost* blink, float time, states s,int 
 				if (level == 1) {
 					(*g).speed = 0.8;
 				}
-				else if (level < 2 && level < 5) {
+				else if (level > 1 && level < 5) {
 					(*g).speed = 0.9;
 				}
 				else {
@@ -325,8 +326,9 @@ void move(ghost* g, grid* gr, pacman* p, ghost* blink, float time, states s,int 
 				}
 			}
 		}
-		(*g).entity.centre.x += dir_to_vec((*g).entity.dir).x * 4.095 * (*g).speed;
-		(*g).entity.centre.y += dir_to_vec((*g).entity.dir).y * 4.095 * (*g).speed;
+		(*g).entity.centre.x += dir_to_vec((*g).entity.dir).x * 4.1 * (*g).speed;
+		(*g).entity.centre.y += dir_to_vec((*g).entity.dir).y * 4.1 * (*g).speed;
+		
 	
 }
 	
@@ -442,7 +444,7 @@ void change_state(ghost* g, ghost* g2, ghost* g3, ghost* g4, states s) {
 				}
 			}
 			else {
-				if (s != (*gs[i]).state && (*gs[i]).state != FRIGTHEND && !(*gs[i]).elroy2 && !(*gs[i]).elroy1 && s != FRIGTHEND) {
+				if (s != (*gs[i]).state && (*gs[i]).state != FRIGTHEND && s != FRIGTHEND && !(*gs[i]).elroy1 && !(*gs[i]).elroy2 ) {
 					(*gs[i]).entity.dir = reverse_dir((*gs[i]).entity.dir);
 				}
 				if (!(*gs[i]).elroy2 && !(*gs[i]).elroy1) {

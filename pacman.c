@@ -491,6 +491,6 @@ void reset_pacman(pacman* p, grid* g) {
     (*p).entity.dir = LEFT;
     (*p).powered = false;
     (*p).time_powered = 0;
-    (*p).entity.dir = LEFT;
+   
 
 }

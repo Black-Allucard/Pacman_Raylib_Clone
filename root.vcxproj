@@ -139,7 +139,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="entity.h" />
-    <ClInclude Include="fruit.h" />
     <ClInclude Include="ghost.h" />
     <ClInclude Include="pacman.h" />
     <ClInclude Include="tile_grid.h" />

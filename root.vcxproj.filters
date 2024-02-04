@@ -44,9 +44,6 @@
     <ClInclude Include="entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="fruit.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ghost.h">
       <Filter>Header Files</Filter>
     </ClInclude>

@@ -4,25 +4,25 @@ C:\Users\Guule\Desktop\root\root\tile_grid.h(14,2): warning C4091: 'typedef ': i
 C:\Users\Guule\Desktop\root\root\pacman.h(51,62): warning C4028: formal parameter 2 different from declaration
 C:\Users\Guule\Desktop\root\root\pacman.h(51,62): warning C4028: formal parameter 3 different from declaration
 C:\Users\Guule\Desktop\root\root\ray.c(129,33): warning C4090: 'function': different 'const' qualifiers
-C:\Users\Guule\Desktop\root\root\ray.c(275,22): warning C4090: 'function': different 'const' qualifiers
-C:\Users\Guule\Desktop\root\root\ray.c(277,26): warning C4020: 'reset_pacman': too many actual parameters
-C:\Users\Guule\Desktop\root\root\ray.c(303,21): warning C4090: 'function': different 'const' qualifiers
-C:\Users\Guule\Desktop\root\root\ray.c(504,34): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(505,36): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(506,35): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(507,35): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(514,51): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(514,75): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(541,22): warning C4047: '=': 'trigger *' differs in levels of indirection from 'int'
-C:\Users\Guule\Desktop\root\root\ray.c(544,27): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(562,35): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(562,85): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(675,51): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(675,75): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(687,61): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(692,61): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(515,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\Guule\Desktop\root\root\ray.c(516,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Guule\Desktop\root\root\ray.c(276,22): warning C4090: 'function': different 'const' qualifiers
+C:\Users\Guule\Desktop\root\root\ray.c(278,26): warning C4020: 'reset_pacman': too many actual parameters
+C:\Users\Guule\Desktop\root\root\ray.c(304,21): warning C4090: 'function': different 'const' qualifiers
+C:\Users\Guule\Desktop\root\root\ray.c(630,34): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\ray.c(631,36): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\ray.c(632,35): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\ray.c(633,35): warning C4244: 'function': conversion from 'double' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\ray.c(640,51): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\Guule\Desktop\root\root\ray.c(640,75): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\Guule\Desktop\root\root\ray.c(667,22): warning C4047: '=': 'trigger *' differs in levels of indirection from 'int'
+C:\Users\Guule\Desktop\root\root\ray.c(670,27): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Guule\Desktop\root\root\ray.c(688,35): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\Guule\Desktop\root\root\ray.c(688,85): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\Guule\Desktop\root\root\ray.c(816,51): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\Guule\Desktop\root\root\ray.c(816,75): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+C:\Users\Guule\Desktop\root\root\ray.c(828,61): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\ray.c(833,61): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Guule\Desktop\root\root\ray.c(641,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Guule\Desktop\root\root\ray.c(642,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 C:\Users\Guule\Desktop\root\root\ray.c(167,10): warning C4101: 'enter_fright': unreferenced local variable
 C:\Users\Guule\Desktop\root\root\ray.c(154,8): warning C4101: 'siren2': unreferenced local variable
 C:\Users\Guule\Desktop\root\root\ray.c(174,10): warning C4101: 'round': unreferenced local variable

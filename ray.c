@@ -111,7 +111,7 @@ int main() {
 	bool enable_global_counter = false;
 	bool eat_fruit = true;
 	bool in_round = false;
-
+	bool flash = false;
 
 	Texture2D graphics = LoadTexture("./assets/Sprites.png");
 
@@ -264,13 +264,14 @@ int main() {
 		else if (since(round_ended, tick) >= 240 && round_ended.trigger > -1) {
 			round_ended = disable_trigger();
 			state_trigger = disable_trigger();
+			global_state = SCATTER;
 			if (!(*pac).live) {
 				lives -= 1;
 			}
 			else {
 				level += 1;
 			}
-			round_started.trigger = tick;
+			
 			if ((*pac).live) {
 				reset_grid(ptr, a);
 			}
@@ -282,7 +283,7 @@ int main() {
 			enable_global_counter = true;
 			(*fruits).disable = true;
 			time_in_round = 0;
-			
+			round_started.trigger = tick;
 			if (lives <= 0) {
 				game_over.trigger = tick;
 			}
@@ -331,46 +332,171 @@ int main() {
 			}
 			else if (since(round_started, tick) >= 80 && round_started.trigger > -1) {
 				in_round = true;
-				state_trigger = set_trigger(tick);
+				if (state_trigger.trigger < 0) {
+					state_trigger = set_trigger(tick);
+				}
 				
 
 
 			}
-
-
 			
-				if (level == 1) {
-					elroy1_trigger = 20;
-					elroy2_trigger = elroy1_trigger / 2;
+			if (in_round) {
+				if (level == 1 && state_trigger.trigger >= 0) {
+					switch (since(state_trigger, tick)) {
+					case(420): {
+						global_state = CHASE;
+
+						break;
+					}
+					case(1620): {
+						global_state = SCATTER;
+
+						break;
+					}
+					case(2080): {
+						global_state = CHASE;
+
+						break;
+					}
+					case(3280): {
+						global_state = SCATTER;
+
+						break;
+					}
+					case(3580): {
+						global_state = CHASE;
+
+						break;
+					}
+					case(4780): {
+						global_state = SCATTER;
+
+						break;
+					}
+					case(5080): {
+						global_state = CHASE;
+						break;
+					}
+					}
+
 				}
-				else if (level == 2) {
-					elroy1_trigger = 30;
-					elroy2_trigger = elroy1_trigger / 2;
+				
+				if (level > 1 && level < 5 && state_trigger.trigger >= 0) {
+					switch (since(state_trigger, tick)) {
+						
+						case(420): {
+							global_state = CHASE;
+
+							break;
+						}
+						case(1620): {
+							global_state = SCATTER;
+
+							break;
+						}
+						case(2080): {
+							global_state = CHASE;
+
+							break;
+						}
+						case(3280): {
+							global_state = SCATTER;
+
+							break;
+						}
+						case(3580): {
+							global_state = CHASE;
+
+							break;
+						}
+						case(65560): {
+							global_state = SCATTER;
+
+							break;
+						}
+						case(65561): {
+							global_state = CHASE;
+							break;
+						}
+						
+					}
 				}
-				else if (level < 6) {
-					elroy1_trigger = 40;
-					elroy2_trigger = elroy1_trigger / 2;
+				if(state_trigger.trigger >= 0 && level >= 5){
+					switch (since(state_trigger, tick)) {
+						
+						case(300): {
+							global_state = CHASE;
+
+							break;
+						}
+						case(1500): {
+							global_state = SCATTER;
+
+							break;
+						}
+						case(1800): {
+							global_state = CHASE;
+
+							break;
+						}
+						case(3000): {
+							global_state = SCATTER;
+
+							break;
+						}
+						case(3300): {
+							global_state = CHASE;
+
+							break;
+						}
+						case(65520): {
+							global_state = SCATTER;
+
+							break;
+						}
+						case(65521): {
+							global_state = CHASE;
+							break;
+						}
+						
+					}
 				}
-				else if (level < 9) {
-					elroy1_trigger = 50;
-					elroy2_trigger = elroy1_trigger / 2;
-				}
-				else if (level < 12) {
-					elroy1_trigger = 60;
-					elroy2_trigger = elroy1_trigger / 2;
-				}
-				else if (level < 15) {
-					elroy1_trigger = 80;
-					elroy2_trigger = elroy1_trigger / 2;
-				}
-				else if (level < 19) {
-					elroy1_trigger = 100;
-					elroy2_trigger = elroy1_trigger / 2;
-				}
-				else {
-					elroy1_trigger = 120;
-					elroy2_trigger = elroy1_trigger / 2;
-				}
+				
+			}
+			
+			
+			if (level == 1) {
+				elroy1_trigger = 20;
+				elroy2_trigger = elroy1_trigger / 2;
+			}
+			else if (level == 2) {
+				elroy1_trigger = 30;
+				elroy2_trigger = elroy1_trigger / 2;
+			}
+			else if (level < 6) {
+				elroy1_trigger = 40;
+				elroy2_trigger = elroy1_trigger / 2;
+			}
+			else if (level < 9) {
+				elroy1_trigger = 50;
+				elroy2_trigger = elroy1_trigger / 2;
+			}
+			else if (level < 12) {
+				elroy1_trigger = 60;
+				elroy2_trigger = elroy1_trigger / 2;
+			}
+			else if (level < 15) {
+				elroy1_trigger = 80;
+				elroy2_trigger = elroy1_trigger / 2;
+			}
+			else if (level < 19) {
+				elroy1_trigger = 100;
+				elroy2_trigger = elroy1_trigger / 2;
+			}
+			else {
+				elroy1_trigger = 120;
+				elroy2_trigger = elroy1_trigger / 2;
+			}
 			
 		
 
@@ -620,9 +746,23 @@ int main() {
 
 			ClearBackground(BLACK);
 
-			DrawTexturePro(graphics, (Rectangle) { 0, 0, 224, 248 }, (Rectangle) { 0, 78, 728, 806 }, (Vector2) { 0, 0 }, 0, RAYWHITE);
+			
 
 			if (since(round_ended, tick) >= 60 && round_ended.trigger >= 0) {
+				if ((*pac).dots_left <= 0) {
+					if (tick % 15 == 0 && flash == true) {
+						flash = false;
+					}
+					else if (tick % 15 == 0 && flash == false) {
+						flash = true;
+					}
+				}
+				if (flash) {
+					DrawTexturePro(graphics, (Rectangle) { 683, 0, 224, 248 }, (Rectangle) { 0, 78, 728, 806 }, (Vector2) { 0, 0 }, 0, RAYWHITE);
+				}
+				else {
+					DrawTexturePro(graphics, (Rectangle) { 0, 0, 224, 248 }, (Rectangle) { 0, 78, 728, 806 }, (Vector2) { 0, 0 }, 0, RAYWHITE);
+				}
 				in_round = false;
 				if ((*pac).dots_left > 0) {
 					(*pac).live = false;
@@ -644,6 +784,7 @@ int main() {
 				
 			}
 			else{
+				DrawTexturePro(graphics, (Rectangle) { 0, 0, 224, 248 }, (Rectangle) { 0, 78, 728, 806 }, (Vector2) { 0, 0 }, 0, RAYWHITE);
 				Draw_grid(ptr, sources_grid, graphics);
 
 				if (pause <= 0) {
@@ -707,7 +848,9 @@ int main() {
 				update(blinky);
 				update(pinky);
 				update(clyde);
-				update_p(pac);
+				if (in_round) {
+					update_p(pac);
+				}
 			}
 			DrawTextEx(font, "HIGH SCORE", (Vector2) { 240, 0 }, 36, 0, YELLOW);
 			DrawTextEx(font, TextFormat("%02i", (*pac).score), (Vector2) { 100, 36 }, 36 ,1, RAYWHITE);
@@ -732,8 +875,7 @@ int main() {
 					PlaySound(start_up);
 				}
 			}
-			printf("%f\n", (*pac).factor*4.095);
-			printf("%f\n", (*blinky).speed * 4.095);
+			printf("%d\n",(*blinky).state);
 			tick += 1;
 
 		}

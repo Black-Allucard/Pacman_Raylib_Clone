@@ -119,7 +119,7 @@ void set_target(pacman* p, ghost* g, grid *grid , ghost*blink) {
 void move(ghost* g, grid* gr, pacman* p, ghost* blink, float time, states s,int level) {
 	int t = time;
 	srand(t);
-	(*g).entity.current_tile = set_current_tile((*g).entity, (*gr).current_tile.size, gr);
+	(*g).entity.current_tile = set_current_tile((*g).entity,gr);
 	set_target(p, g, gr, blink);
 	tile current_tile = (*g).entity.current_tile;
 	int next_row;
@@ -154,7 +154,7 @@ void move(ghost* g, grid* gr, pacman* p, ghost* blink, float time, states s,int 
 			}
 		}
 
-		else if (((abs((*g).entity.current_tile.Centre.x - (*g).entity.centre.x)) <= 1) && ((abs((*g).entity.current_tile.Centre.y - (*g).entity.centre.y)) <= 1)
+		else if (((abs((*g).entity.current_tile.Centre.x - (*g).entity.centre.x)) <= 2) && ((abs((*g).entity.current_tile.Centre.y - (*g).entity.centre.y)) <= 2)
 			|| ((*g).entity.centre.x > 299 && (*g).entity.centre.x < 455 && abs((*g).entity.centre.y - 377) <= 1.742 && (*g).entity.dir == UP)) {
 
 
@@ -376,23 +376,6 @@ void draw_ghost(ghost* g, Texture2D text, int time) {
 	else {
 		DrawTexturePro(text, (Rectangle) { (rect.x + ((rect.width / 2) * (frame))), rect.y, (rect.width / 2), rect.height }, (Rectangle) { (*g).entity.centre.x, (*g).entity.centre.y, 48, 48 }, (Vector2) { 24, 24 }, 0, RAYWHITE);
 	}
-	
-	/*switch ((*g).type) {
-	case BLINKY: {DrawRectanglePro( (Rectangle) { Centre.x, Centre.y, 26, 26 }, (Vector2){ 13,13} ,0,RED );
-		break;
-	}
-	case INKY: {DrawRectanglePro((Rectangle) { Centre.x, Centre.y, 26, 26 }, (Vector2) { 13, 13 }, 0, DARKBLUE);
-		break;
-	}
-	case PINKY: {DrawRectanglePro((Rectangle) { Centre.x, Centre.y, 26, 26 }, (Vector2) { 13, 13 }, 0, PINK);
-		break;
-    }
-	case CLYDE: {DrawRectanglePro((Rectangle) { Centre.x, Centre.y, 26, 26 }, (Vector2) { 13, 13 }, 0, ORANGE);
-		break;
-		}
-
-	}*/
-	
 }
 
 ghost init_ghost(states state, ghost_type type, entity entity, Rectangle sources[5], int level) {
@@ -531,11 +514,8 @@ void enter_house(ghost* g, states s){
 		break;
 	}
 	}
-	if (abs((*g).entity.centre.x - centre.x) <= 4 && abs((*g).entity.centre.y - centre.y) <= 4) {
-		if ((*g).type == BLINKY) {
-			
-		}
-		else if((*g).type != BLINKY){
+	if (abs((*g).entity.centre.x - centre.x) <= 6 && abs((*g).entity.centre.y - centre.y) <= 6) {
+		if((*g).type != BLINKY){
 			(*g).in_house = true;
 		}
 		(*g).state = s;
@@ -569,7 +549,7 @@ void reset_ghost(ghost* g, grid* gr, states s) {
 		(*g).in_house = true;
 		(*g).frame = 0;
 		(*g).entity.dir = DOWN;
-		set_current_tile((*g).entity, 26, gr);
+		set_current_tile((*g).entity,gr);
 		(*g).state = s;
 		break;
 		
@@ -579,7 +559,7 @@ void reset_ghost(ghost* g, grid* gr, states s) {
 		(*g).in_house = true;
 		(*g).frame = 0;
 		(*g).entity.dir = UP;
-		set_current_tile((*g).entity, 26, gr);
+		set_current_tile((*g).entity,gr);
 		(*g).state = s;
 		break;
 
@@ -588,7 +568,7 @@ void reset_ghost(ghost* g, grid* gr, states s) {
 		(*g).entity.centre = (Vector2){ 365, 376 };
 		(*g).frame = 0;
 		(*g).entity.dir = LEFT;
-		set_current_tile((*g).entity, 26, gr);
+		set_current_tile((*g).entity,gr);
 		(*g).state = s;
 		break;
 
@@ -598,7 +578,7 @@ void reset_ghost(ghost* g, grid* gr, states s) {
 		(*g).in_house = true;
 		(*g).frame = 0;
 		(*g).entity.dir = DOWN;
-		set_current_tile((*g).entity, 26, gr);
+		set_current_tile((*g).entity,gr);
 		(*g).state = s;
 		break;
 

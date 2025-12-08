@@ -35,6 +35,8 @@ typedef struct ghost {
 	Rectangle scores[4][3];
 	int target_row;
 	int target_collum;
+	int spawn_row;
+	int spawn_collum;
 	float frame;
 	float score_frame;
 	bool eat_once;
@@ -48,7 +50,7 @@ typedef struct ghost {
 void enter_house(ghost* g, states s);
 void leave_house(ghost* g, states s);
 void set_target(pacman* p, ghost* g, grid* grid, ghost* blink);
-void move(ghost* g, grid* gr, pacman* p, ghost* blink, float time, states s,int level);
+void move(ghost* g, grid* gr, pacman* p, ghost* blink, float time, states global_state,int level);
 void bounce(ghost* g, int starty);
 void update(ghost* g);
 void draw_ghost(ghost* g, Texture2D text, int time);

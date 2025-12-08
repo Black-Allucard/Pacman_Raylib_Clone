@@ -328,7 +328,7 @@ int main() {
 			if ((*pac).live) {
 				reset_grid(ptr, a);
 			}
-			reset_pacman(pac, ptr,global_state);
+			reset_pacman(pac, ptr);
 			reset_ghost(pinky, ptr, global_state);
 			reset_ghost(inky, ptr, global_state);
 			reset_ghost(blinky, ptr, global_state);

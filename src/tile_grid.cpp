@@ -1,6 +1,6 @@
 #include "tile_grid.h"
 #include "stdio.h"
-// gebruikt om de coördinaten van de tile t.o.v het scherm
+// gebruikt om de coï¿½rdinaten van de tile t.o.v het scherm
 Vector2 tile_to_centre(int row, int collum, int size) {
 	int x = (size / 2) + (collum * size);
 	int y = (size / 2) + (row * size);

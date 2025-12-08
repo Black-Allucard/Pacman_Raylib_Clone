@@ -19,6 +19,6 @@ typedef struct entity {
 enum dir reverse_dir(enum dir d);
 Vector2 dir_to_vec(enum dir d);
 bool is_tile_blocking(grid* g, enum dir wanted_dir, tile t2);
-tile set_current_tile(entity e, int size, grid*g);
+tile set_current_tile(entity e,grid*g);
 tile get_current_tile(entity* e);
 

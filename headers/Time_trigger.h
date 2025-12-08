@@ -1,7 +1,6 @@
 #pragma once
 #define DISABLED_TRIGGER (-1)
 #include "raylib.h"
-#include "Time_trigger.h"
 
 typedef struct time_trigger {
 	int trigger;

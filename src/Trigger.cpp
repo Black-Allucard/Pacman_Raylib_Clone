@@ -1,6 +1,5 @@
-#pragma once
 #include "Time_trigger.h"
-
+#include "math.h"
 trigger set_trigger(int time) {
 	trigger t = { time };
 	return t;

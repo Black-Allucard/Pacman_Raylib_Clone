@@ -11,7 +11,7 @@ typedef enum tile_type {
 	tunnel,
 	ghost_house_entrance,
 	energizer
-};
+}tile_type;
 
 typedef struct tile {
 	Vector2 Centre;
@@ -19,7 +19,6 @@ typedef struct tile {
 	enum tile_type type;
 	int row;
 	int collum;
-	float frame;
 }tile;
 
 typedef struct tile_grid {

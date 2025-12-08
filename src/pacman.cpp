@@ -1,11 +1,10 @@
-#pragma once
 #include "pacman.h"
 #include "stdio.h"
 #include "math.h"
 
 void move_pacman(pacman* e, grid* g, int level) {
     
-     (*e).entity.current_tile = set_current_tile((*e).entity, (*g).current_tile.size, g);
+     (*e).entity.current_tile = set_current_tile((*e).entity,g);
     enum dir wanted_dir;
     tile next_tile = (*e).entity.current_tile;
 
@@ -203,7 +202,7 @@ void move_pacman(pacman* e, grid* g, int level) {
         }
         //printf("%d", (*e).score);
     }
-    (*e).entity.current_tile = set_current_tile((*e).entity, (*g).current_tile.size, g);
+    (*e).entity.current_tile = set_current_tile((*e).entity,g);
     (*e).time_powered -= 1;
         
    
@@ -304,7 +303,7 @@ bool allow_cornering(grid* g, pacman* p, enum dir wanted_dir) {
 }
 
 bool is_tile_blocking(grid* g, pacman* p, enum dir wanted_dir) {
-    (*p).entity.current_tile = set_current_tile((*p).entity,(*g).current_tile.size,g);
+    (*p).entity.current_tile = set_current_tile((*p).entity,g);
     int next_row = round((*p).entity.current_tile.row + dir_to_vec(wanted_dir).y);
     int next_collum = round((*p).entity.current_tile.collum + dir_to_vec(wanted_dir).x);
 
@@ -480,7 +479,7 @@ void update_p(pacman* p){
 
 void reset_pacman(pacman* p, grid* g) {
     (*p).entity.centre = (Vector2){ 364,689 };
-    set_current_tile((*p).entity, 26, g);
+    set_current_tile((*p).entity,g);
     if ((*p).dots_left <= 0 && (*p).live) {
         (*p).dots_left = 244;
     }
